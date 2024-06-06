@@ -12,7 +12,7 @@ import com.example.aqi.model.AQIStation;
 
 import java.util.List;
 
-public class AQIAdapter extends RecyclerView.Adapter<AQIAdapter.ViewHolder>{
+public class AQIAdapter extends RecyclerView.Adapter<AQIAdapter.ViewHolder> {
 
     private List<AQIStation> aqiStations;
     private OnItemClickListener listener;
@@ -26,12 +26,14 @@ public class AQIAdapter extends RecyclerView.Adapter<AQIAdapter.ViewHolder>{
         this.listener = listener;
     }
 
-
+    @NonNull
+    @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_aqi, parent, false);
         return new ViewHolder(view);
     }
 
+    @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         AQIStation item = aqiStations.get(position);
         holder.textSiteName.setText(item.getSiteName());
@@ -40,9 +42,12 @@ public class AQIAdapter extends RecyclerView.Adapter<AQIAdapter.ViewHolder>{
         holder.textStatus.setText(item.getStatus());
         holder.itemView.setOnClickListener(v -> listener.onItemClick(item));
     }
+
+    @Override
     public int getItemCount() {
         return aqiStations.size();
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView textSiteName, textCounty, textAQI, textStatus;
 

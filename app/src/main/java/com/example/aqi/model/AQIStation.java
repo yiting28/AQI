@@ -18,6 +18,7 @@ public class AQIStation implements Serializable {
     private String WindDirec;
     private String PublishTime;
 
+    // Getters and setters
     public String getSiteName() {
         return SiteName;
     }
