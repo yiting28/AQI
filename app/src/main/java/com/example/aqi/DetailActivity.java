@@ -1,7 +1,6 @@
 package com.example.aqi;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -23,7 +22,7 @@ public class DetailActivity extends AppCompatActivity {
         if (aqiStation != null) {
             textSiteName.setText(aqiStation.getSiteName());
             textCounty.setText(aqiStation.getCounty());
-            textAQI.setText("AQI: " + aqiStation.getAQI());
+            textAQI.setText("AQI: " + aqiStation.getAqi());
             textStatus.setText(aqiStation.getStatus());
         }
     }

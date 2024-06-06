@@ -38,7 +38,7 @@ public class AQIAdapter extends RecyclerView.Adapter<AQIAdapter.ViewHolder> {
         AQIStation item = aqiStations.get(position);
         holder.textSiteName.setText(item.getSiteName());
         holder.textCounty.setText(item.getCounty());
-        holder.textAQI.setText("AQI: " + item.getAQI());
+        holder.textAQI.setText("AQI: " + item.getAqi());
         holder.textStatus.setText(item.getStatus());
         holder.itemView.setOnClickListener(v -> listener.onItemClick(item));
     }
